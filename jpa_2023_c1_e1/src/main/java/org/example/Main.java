@@ -12,17 +12,17 @@ import java.util.HashMap;
 public class Main {
     public static void main(String[] args) {
 
-        EntityManagerFactory emf = new HibernatePersistenceProvider().createContainerEntityManagerFactory(new CustomPersistenceUnitInfo(), new HashMap<>());
+        EntityManagerFactory emf = new HibernatePersistenceProvider().createContainerEntityManagerFactory(new CustomPersistenceUnitInfo(), new HashMap<>()); //this is for not XML WAY
 
-        //EntityManagerFactory emf = Persistence.createEntityManagerFactory("my-persistence-unit");
+        //EntityManagerFactory emf = Persistence.createEntityManagerFactory("my-persistence-unit"); // this is for XML way
         EntityManager em = emf.createEntityManager();  // represents the context
 
     try {
         em.getTransaction().begin();
 
         Product p = new Product();
-        p.setId(2L);
-        p.setName("Chocolate");
+        p.setId(3L);
+        p.setName("shirt");
 
         em.persist(p);  // add this to the context -> NOT AN INSERT QUERY!!!!!!!!!!!
 
