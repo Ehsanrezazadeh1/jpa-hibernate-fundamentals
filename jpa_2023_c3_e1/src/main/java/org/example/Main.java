@@ -25,9 +25,14 @@ public class Main {
         em.getTransaction().begin();  //  <<<<START OF TRANSACTION>>>>
 
 
-        //find vs getReference
-        //var e1 = em.find(Employee.class, 1);
-        //System.out.println(e1);
+//        find vs getReference
+//        var e1 = em.find(Employee.class, 1);
+//        System.out.println(e1);
+
+        var e2 = new Employee();
+        e2.setName("Milad");
+        e2.setAddress("Iran");
+        em.persist(e2);
 
         //var e2 = em.getReference(Employee.class,1);  // in getReference we add data from db to Context and when we need it, it can be used
         //maybe we do not want to use that instance in context now, but maybe we use it tomorrow, so we use getReference here
