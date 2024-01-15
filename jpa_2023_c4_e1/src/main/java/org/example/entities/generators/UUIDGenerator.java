@@ -12,7 +12,7 @@ import java.util.UUID;
 
 public class UUIDGenerator implements IdentifierGenerator {
 
-    // generate generate custom ID for our db, in this case we generate random UUID!!
+    // generate custom ID for our db, in this case we generate random UUID!!
     @Override
     public Object generate(SharedSessionContractImplementor sharedSessionContractImplementor, Object o) {
         return sign(UUID.randomUUID().toString());
